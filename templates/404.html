@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 - Page Not Found | Calculator By Rishu</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style/style.css') }}" />
+  <style>
+    .error-container {
+      text-align: center;
+      color: #fff;
+      padding: 40px;
+    }
+    
+    .error-code {
+      font-size: 120px;
+      font-weight: bold;
+      background: linear-gradient(45deg, #fb7c15, #6dee0a);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 20px;
+    }
+    
+    .error-message {
+      font-size: 24px;
+      margin-bottom: 30px;
+      color: rgba(255, 255, 255, 0.8);
+    }
+    
+    .home-link {
+      display: inline-block;
+      padding: 15px 40px;
+      background: linear-gradient(45deg, #fb7c15, #ff9a44);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 50px;
+      font-size: 18px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(251, 124, 21, 0.4);
+    }
+    
+    .home-link:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(251, 124, 21, 0.6);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="error-container">
+    <div class="error-code">404</div>
+    <p class="error-message">Oops! The page you're looking for doesn't exist.</p>
+    <a href="/" class="home-link">Go to Calculator</a>
+  </div>
+</body>
+
+</html>

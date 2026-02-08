@@ -4,46 +4,73 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="A modern, responsive calculator web application built with Flask. Features keyboard support, dark theme, and secure calculations." />
+  <meta name="keywords" content="calculator, flask, python, web app, mathematics" />
+  <meta name="author" content="Rishu" />
+  <meta name="theme-color" content="#0a0a0a" />
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Calculator By Rishu" />
+  <meta property="og:description" content="A modern, responsive calculator web application" />
+  <meta property="og:type" content="website" />
+
   <title>Calculator By Rishu</title>
+
+  <!-- Favicon -->
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧮</text></svg>" />
+
   <link rel="stylesheet" href="{{ url_for('static', filename='style/style.css') }}" />
 </head>
 
 <body>
-  <div class="calculator">
-    <input type="text" placeholder="0" id="inputBox" readonly />
-    <div>
-      <button class="operator">AC</button>
-      <button class="operator">DEL</button>
-      <button class="operator">%</button>
-      <button class="operator">/</button>
-    </div>
-    <div>
-      <button>7</button>
-      <button>8</button>
-      <button>9</button>
-      <button class="operator">*</button>
-    </div>
-    <div>
-      <button>4</button>
-      <button>5</button>
-      <button>6</button>
-      <button class="operator">-</button>
-    </div>
-    <div>
-      <button>1</button>
-      <button>2</button>
-      <button>3</button>
-      <button class="operator">+</button>
-    </div>
-    <div>
-      <button>00</button>
-      <button>0</button>
-      <button>.</button>
-      <button class="equalBtn">=</button>
-    </div>
-  </div>
-  <script src="{{ url_for('static', filename='script.js') }}"></script>
+  <main class="calculator-wrapper">
+    <h1 class="sr-only">Calculator Application</h1>
 
+    <div class="calculator" role="application" aria-label="Calculator">
+      <input type="text" placeholder="0" id="inputBox" readonly aria-label="Calculator display" aria-live="polite" />
+
+      <div class="button-row" role="group" aria-label="Control buttons">
+        <button class="operator" aria-label="Clear all" data-value="AC">AC</button>
+        <button class="operator" aria-label="Delete last character" data-value="DEL">DEL</button>
+        <button class="operator" aria-label="Percentage" data-value="%">%</button>
+        <button class="operator" aria-label="Divide" data-value="/">÷</button>
+      </div>
+
+      <div class="button-row" role="group" aria-label="Numbers 7-9 and multiply">
+        <button aria-label="Seven" data-value="7">7</button>
+        <button aria-label="Eight" data-value="8">8</button>
+        <button aria-label="Nine" data-value="9">9</button>
+        <button class="operator" aria-label="Multiply" data-value="*">×</button>
+      </div>
+
+      <div class="button-row" role="group" aria-label="Numbers 4-6 and subtract">
+        <button aria-label="Four" data-value="4">4</button>
+        <button aria-label="Five" data-value="5">5</button>
+        <button aria-label="Six" data-value="6">6</button>
+        <button class="operator" aria-label="Subtract" data-value="-">−</button>
+      </div>
+
+      <div class="button-row" role="group" aria-label="Numbers 1-3 and add">
+        <button aria-label="One" data-value="1">1</button>
+        <button aria-label="Two" data-value="2">2</button>
+        <button aria-label="Three" data-value="3">3</button>
+        <button class="operator" aria-label="Add" data-value="+">+</button>
+      </div>
+
+      <div class="button-row" role="group" aria-label="Zero, decimal and equals">
+        <button aria-label="Double zero" data-value="00">00</button>
+        <button aria-label="Zero" data-value="0">0</button>
+        <button aria-label="Decimal point" data-value=".">.</button>
+        <button class="equalBtn" aria-label="Calculate result" data-value="=">=</button>
+      </div>
+    </div>
+
+    <p class="keyboard-hint">💡 Tip: Use your keyboard to calculate!</p>
+  </main>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 
 </html>
